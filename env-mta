@@ -1,0 +1,2 @@
+THRESHOLD=1
+IP_CONFIG_DOMAIN="http://ipconfig:8080"

@@ -1,0 +1,20 @@
+version: "2.4"
+services:
+  mta:
+    image: vikasrohilla/sendinblue:mta
+    restart: always
+    environment: 
+      - IP_CONFIG_DOMAIN=${IP_CONFIG_DOMAIN}
+      - THRESHOLD=${THRESHOLD}
+    ports:
+      - "4001:4000"
+    networks:
+      - mta-network
+
+  ipconfig:
+    image: vikasrohilla/sendinblue:ip-config
+    restart: always
+    networks: 
+      - mta-network
+networks:
+  mta-network:
